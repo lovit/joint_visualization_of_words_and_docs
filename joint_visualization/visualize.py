@@ -50,13 +50,15 @@ def draw(coordinates, idx_to_text, p=None, title=None, marker="circle",
         p = initialize_figure(title)
 
     # prepare data source
+    colors = marker_color if isinstance(marker_color, list) else [marker_color] * coordinates.shape[0]
     source = ColumnDataSource(data=dict(
         x = coordinates[:,0].tolist(),
         y = coordinates[:,1].tolist(),
-        desc = idx_to_text
+        desc = idx_to_text,
+        fill_color = colors,
     ))
 
     # scatter plot
     p.scatter('x', 'y', marker=marker, size=marker_size, line_color= 'white',
-              fill_color= marker_color, alpha=marker_alpha, source=source)
+              fill_color= 'fill_color', alpha=marker_alpha, source=source)
     return p
