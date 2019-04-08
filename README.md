@@ -18,9 +18,12 @@ Word2Vec 은 단어의 앞, 뒤에 등장하는 문맥 단어 (context words) �
 
 아래는 2 만여개의 단어로 구성된 3 만여개의 2016-10-20 의 뉴스 기사를 Doc2Vec 을 이용하여 학습한 뒤, word, document vectors 를 한번에 PCA 로 압축한 그림입니다. 단어와 문서가 2 : 3 의 비율로 섞여 있기 때문에 임베딩 공간 전체를 어느 정도 균등하게 나눠 차지합니다. 하지만 문서와 단어가 뒤섞인 그림의 형태는 아닙니다. 또한 PCA 로 공간이 이처럼 나뉘어졌다는 것은 정말로 문서와 단어가 임베딩 공간을 이분 (bipartite) 하고 있다는 가능성을 시사합니다.
 
+([Bokeh HTML page](https://raw.githubusercontent.com/lovit/joint_visualize_words_docs/master/demo/joint_visualization_word_doc_news_tsne.html))
 ![](figures/joint_visualization_news_word_pca.png)
 
 t-SNE 를 이용하여 그린 그림에서도 이는 확인됩니다. 물론 몇 몇 문서들은 단어와 뒤섞여 있기는 합니다만, 두 공간이 나뉘어져 있을 가능성이 높습니다.
+
+([Bokeh HTML page](https://github.com/lovit/joint_visualize_words_docs/raw/master/demo/joint_visualization_word_doc_news_pca.html))
 
 ![](figures/joint_visualization_news_word_tsne.png)
 
@@ -42,6 +45,8 @@ t-SNE 를 이용하여 그린 그림에서도 이는 확인됩니다. 물론 몇
 ![](figures/joint_visualization_word_vector_color_by_rate.png)
 
 아마도 우리가 Doc2Vec 으로 학습 한 결과를 시각화 할 때는 아래와 같은 그림을 예상할 것입니다. 문서와 단어를 함께 표현한다는 것은 이미 topical space 에서의 그림을 그리겠다는 의미입니다. 이 때에는 단어의 임베딩 벡터를 이용하는 것이 아니라, 단어의 topical representation 을 이용해야 합니다. 그리고 이는 document vectors 의 가중 평균, 혹은 임의의 어떤 방법으로도 만들 수 있습니다.
+
+([Bokeh HTML page](https://github.com/lovit/joint_visualize_words_docs/raw/master/demo/joint_visualization_word_doc_movie_pca_affinity.html))
 
 ![](figures/joint_visualization_rate_word_pca_affinity.png)
 
