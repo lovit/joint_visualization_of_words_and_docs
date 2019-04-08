@@ -1,4 +1,4 @@
-# Example of joint visualization of words and docs
+# (Demo) Joint visualization of words and docs
 
 Visualizing representation vector of words and docs trained from Doc2Vec
 
